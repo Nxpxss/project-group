@@ -11,6 +11,9 @@ let users = [
   { email: 'john.doe@gmail.com', password: 'password456', accountName: 'John Doe' }
 ];
 
+// ตัวแปรเก็บสถานะ favorite สำหรับแต่ละผู้ใช้และภาพยนตร์
+let favorites = []; 
+
 // API สำหรับดึง accountName จาก email
 app.get('/api/getAccountName', (req, res) => {
   const email = req.query.email;  // ดึง email จาก query parameter
@@ -84,6 +87,52 @@ app.post('/api/accountName', (req, res) => {
 
   // ส่งข้อความยืนยัน
   res.status(200).send({ message: 'Account name updated successfully', accountName: user.accountName });
+});
+
+// API สำหรับบันทึกสถานะการเลือกดาว (favorite)
+app.post('/api/favorites', (req, res) => {
+  const { accountName, movieId, isSelected } = req.body;
+
+  console.log('Received data for favorite update:', {
+    accountName: accountName,
+    movieId: movieId,
+    isSelected: isSelected
+  });
+
+  // ตรวจสอบว่ามีการส่งค่า email, movieId และ isSelected หรือไม่
+  if (!accountName || !movieId || typeof isSelected !== 'boolean') {
+    return res.status(400).send({ message: 'Missing required fields: accountName, movieId, or isSelected' });
+  }
+
+  // ค้นหาผู้ใช้ที่มี email
+  const user = users.find(user => user.accountName === accountName);
+  if (!user) {
+    return res.status(404).send({ message: 'User not found' });
+  }
+
+  // อัปเดตสถานะ favorite ของผู้ใช้
+  const favoriteIndex = favorites.findIndex(fav => fav.accountName === accountName && fav.movieId === movieId);
+  if (favoriteIndex === -1) {
+    favorites.push({ accountName, movieId, isSelected });
+  } else {
+    favorites[favoriteIndex].isSelected = isSelected;
+  }
+  console.log('Updated favorites:', favorites);
+
+  res.status(200).send({ message: 'Favorite status updated successfully' });
+});
+
+// API สำหรับดึงสถานะการเลือกดาว (favorite)
+app.get('/api/favorites', (req, res) => {
+  const { accountName, movieId } = req.query;
+
+  // ค้นหาสถานะ favorite ของผู้ใช้
+  const favorite = favorites.find(fav => fav.accountName === accountName && fav.movieId === movieId);
+  if (favorite) {
+    res.status(200).send({ isSelected: favorite.isSelected });
+  } else {
+    res.status(200).send({ isSelected: false });
+  }
 });
 
 // รันเซิร์ฟเวอร์บนพอร์ต 3000

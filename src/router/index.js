@@ -5,6 +5,8 @@ import SignupPage from '@/views/SignupPage.vue';
 import ProfilePage from '@/views/ProfilePage.vue';
 import AccountPage from '@/views/Account.vue'; // กำหนดชื่อตรงกับไฟล์ Account.vue
 import MovieDetailPage from '@/views/MovieDetailPage.vue';
+import MyListPage  from '@/views/MyList.vue';
+import MovieCard from '@/components/MovieCard.vue';
 
 // ฟังก์ชันเพื่อตรวจสอบสถานะการล็อกอิน
 function isLoggedIn() {
@@ -15,6 +17,7 @@ const routes = [
   { path: '/', component: HomePage },
   { path: '/login', component: LoginPage },
   { path: '/signup', component: SignupPage },
+  { path: '/Mylist', component: MyListPage },
   {
     path: '/profile',
     component: ProfilePage,
@@ -25,7 +28,8 @@ const routes = [
     component: AccountPage, // ตรวจสอบว่าชื่อ component ตรงกับชื่อที่นำเข้า
     meta: { requiresAuth: true } // กำหนดว่าหน้านี้ต้องการการยืนยันตัวตน
   },
-  { path: '/movie/:id', component: MovieDetailPage }
+  { path: '/movie/:id', component: MovieDetailPage },
+  { path: '/movie/:id', component: MyListPage }, // เส้นทางใหม่สำหรับรายการภาพยนตร์
 ];
 
 const router = createRouter({

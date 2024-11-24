@@ -22,7 +22,7 @@
             <router-link class="nav-link" to="/movies">Movies</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/my-list">My List</router-link>
+            <router-link class="nav-link" to="/MyList">My List</router-link>
           </li>
 
           <!-- Show account name and logout button if logged in -->

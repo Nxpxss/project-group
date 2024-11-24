@@ -148,6 +148,10 @@
         ]
       };
     },
+        mounted() {
+      // เมื่อ component ถูกโหลด, ดึงข้อมูล favorites จาก localStorage
+      this.loadFavorites();
+    },
     methods: {
       scrollLeft(sliderName) {
         const slider = this.$refs[sliderName];
@@ -167,7 +171,22 @@
           });
         }
       },
-    }
+      loadFavorites() {
+        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        this.Suggested.forEach(movie => {
+          movie.isFavorite = favorites.some(fav => fav.id === movie.id);
+        });
+        this.Action.forEach(movie => {
+          movie.isFavorite = favorites.some(fav => fav.id === movie.id);
+        });
+        this.Horror.forEach(movie => {
+          movie.isFavorite = favorites.some(fav => fav.id === movie.id);
+        });
+        this.Romance.forEach(movie => {
+          movie.isFavorite = favorites.some(fav => fav.id === movie.id);
+        });
+      }
+    } 
   };
   </script>
   
