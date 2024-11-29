@@ -122,16 +122,19 @@ app.post('/api/favorites', (req, res) => {
   res.status(200).send({ message: 'Favorite status updated successfully' });
 });
 
-// API สำหรับดึงสถานะการเลือกดาว (favorite)
+// API สำหรับดึงรายการภาพยนตร์ที่เป็น favorite ทั้งหมดสำหรับผู้ใช้ที่ระบุ
 app.get('/api/favorites', (req, res) => {
-  const { accountName, movieId } = req.query;
+  const { accountName } = req.query;
 
-  // ค้นหาสถานะ favorite ของผู้ใช้
-  const favorite = favorites.find(fav => fav.accountName === accountName && fav.movieId === movieId);
-  if (favorite) {
-    res.status(200).send({ isSelected: favorite.isSelected });
+  // ค้นหารายการ favorite ทั้งหมดของผู้ใช้ที่ระบุ
+  const userFavorites = favorites.filter(fav => fav.accountName === accountName && fav.isSelected);
+
+  // ถ้ามีรายการ favorite ที่ตรงกับผู้ใช้ ให้ส่งรายการนั้นกลับไป
+  if (userFavorites.length > 0) {
+    res.status(200).send({ favorites: userFavorites });
   } else {
-    res.status(200).send({ isSelected: false });
+    // ถ้าไม่มีรายการ favorite ที่เลือก ให้ส่งกลับเป็น array ว่าง
+    res.status(200).send({ favorites: [] });
   }
 });
 

@@ -29,7 +29,7 @@ const routes = [
     meta: { requiresAuth: true } // กำหนดว่าหน้านี้ต้องการการยืนยันตัวตน
   },
   { path: '/movie/:id', component: MovieDetailPage },
-  { path: '/movie/:id', component: MyListPage }, // เส้นทางใหม่สำหรับรายการภาพยนตร์
+  { path: '/mylist/movie/:id', component: MyListPage }, // เส้นทางใหม่สำหรับรายการภาพยนตร์
 ];
 
 const router = createRouter({

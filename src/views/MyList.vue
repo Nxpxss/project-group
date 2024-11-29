@@ -1,120 +1,120 @@
 <template>
-    <div>
-      <!-- Display Navbar -->
-      <Navbar />
-      
-      <!-- List of Favorite Movies -->
-      <div v-if="favoriteMovies && favoriteMovies.length > 0">
-        <h2>My Favorite Movies</h2>
-        <ul>
-          <li v-for="movie in favoriteMovies" :key="movie.id">
-            {{ movie.title }}
-          </li>
-        </ul>
-      </div>
-      <div v-else>
-        <h2>No Favorite Movies Yet</h2>
-      </div>
-      
-      <!-- Display All Movies with MovieCard -->
-      <div>
-        <h2>All Movies</h2>
+  <div>
+    <!-- Display Navbar -->
+    <Navbar />
+
+    <!-- List of Favorite Movies -->
+    <div v-if="favoriteMovies && favoriteMovies.length > 0">
+      <h2>My Favorite Movies</h2>
+      <div class="movie-cards">
         <MovieCard
-          v-for="movie in movie"
+          v-for="movie in favoriteMovies"
           :key="movie.id"
           :movie="movie"
+          :isSelected="isFavorite(movie.id)"
           @toggle-favorite="handleToggleFavorite"
         />
       </div>
-      
-      <!-- Display Footer -->
-      <Footer />
     </div>
-  </template>
-  
-  <script>
-  import axios from 'axios';
-  import Navbar from '@/components/Navbar.vue';
-  import Footer from '@/components/Footer.vue';
-  import MovieCard from '@/components/MovieCard.vue';
-  
-  export default {
-    name: 'MyList',
-    components: {
-      Navbar,
-      Footer,
-      MovieCard,
+    <div v-else>
+      <h2>No Favorite Movies Yet</h2>
+    </div>
+
+    <!-- Display Footer -->
+    <Footer />
+  </div>
+</template>
+
+<script>
+import axios from 'axios';
+import Navbar from '@/components/Navbar.vue';
+import Footer from '@/components/Footer.vue';
+import MovieCard from '@/components/MovieCard.vue';
+
+export default {
+  name: 'MyList',
+  components: {
+    Navbar,
+    Footer,
+    MovieCard,
+  },
+  data() {
+    return {
+      favoriteMovies: [], // Favorite movies list
+    };
+  },
+  methods: {
+    // ฟังก์ชันดึงข้อมูลภาพยนตร์โปรดจากเซิร์ฟเวอร์
+    async loadFavoriteMovies() {
+      const accountName = localStorage.getItem('accountName');
+      if (!accountName) {
+        console.error('User is not logged in');
+        return;
+      }
+
+      try {
+        const response = await axios.get('http://localhost:3000/api/favorites', {
+          params: { accountName: accountName },
+        });
+        this.favoriteMovies = response.data.favorites; // บันทึกรายการโปรดจากเซิร์ฟเวอร์
+      } catch (error) {
+        console.error('Error loading favorite movies:', error);
+      }
     },
-    data() {
-      return {
-        favoriteMovies: [], // รายการภาพยนตร์ที่ถูกเลือก
-        movie: [], // รายการภาพยนตร์ทั้งหมด
-      };
+
+    // ฟังก์ชันเช็คว่า movie เป็นโปรดไหม
+    isFavorite(movieId) {
+      return this.favoriteMovies.some(movie => movie.id === movieId);
     },
-    methods: {
-      async loadFavoriteMovies() {
-        const accountName = localStorage.getItem('accountName'); // ดึง accountName จาก localStorage
-        
-        if (!accountName) {
-          console.error('User is not logged in');
-          return;
-        }
-        
-        try {
-          // ดึงข้อมูลรายการ favorite จากเซิร์ฟเวอร์
-          const response = await axios.get('http://localhost:3000/api/favorites', {
-            params: { accountName: accountName },
-          });
-          
-          // เก็บข้อมูลภาพยนตร์ที่ถูกเลือกใน favoriteMovies
-          this.favoriteMovies = response.data.movie;
-        } catch (error) {
-          console.error('Error loading favorite movies:', error);
-        }
-      },
-      async loadMovies() {
-        try {
-          // ดึงข้อมูลภาพยนตร์ทั้งหมดจากเซิร์ฟเวอร์
-          const response = await axios.get('http://localhost:3000/api/favorites');
-          this.movie = response.data.movie;
-        } catch (error) {
-          console.error('Error loading favorites:', error);
-        }
-      },
-      handleToggleFavorite(movie, isSelected) {
+
+    // ฟังก์ชันจัดการการเพิ่ม/ลบภาพยนตร์จากรายการโปรด
+    async handleToggleFavorite(movie, isSelected) {
+      const accountName = localStorage.getItem('accountName');
+      if (!accountName) {
+        console.error('User is not logged in');
+        return;
+      }
+
+      try {
         if (isSelected) {
-          // เพิ่มภาพยนตร์ที่ถูกเลือก
-          if (!this.favoriteMovies.find(fav => fav.id === movie.id)) {
-            this.favoriteMovies.push(movie);
-          }
+          // เพิ่มภาพยนตร์เข้าไปในรายการโปรด
+          await axios.post('http://localhost:3000/api/favorites', {
+            movieID: movie.id,
+            accountName: accountName,
+          });
+          this.favoriteMovies.push(movie); // Add to local favorite list
         } else {
-          // ลบภาพยนตร์ออก
+          // ลบภาพยนตร์ออกจากรายการโปรด
+          await axios.delete('http://localhost:3000/api/favorites', {
+            data: { movieID: movie.id, accountName: accountName },
+          });
+          // Remove from local favorite list และไม่ให้แสดงในหน้า
           this.favoriteMovies = this.favoriteMovies.filter(fav => fav.id !== movie.id);
         }
-      },
+      } catch (error) {
+        console.error('Error updating favorite movies:', error);
+      }
     },
-    mounted() {
-      this.loadFavoriteMovies(); // โหลดข้อมูล favorite
-      this.loadMovies(); // โหลดข้อมูลภาพยนตร์ทั้งหมด
-    },
-  };
-  </script>
-  
-  <style>
-  /* สไตล์สำหรับ MyList */
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    font-size: 1.2rem;
-    margin: 5px 0;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-top: 20px;
-  }
-  </style>
-  
+  },
+  mounted() {
+    this.loadFavoriteMovies(); // เรียกใช้เมื่อ component โหลดเสร็จ
+  },
+};
+</script>
+
+<style scoped>
+h2 {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.movie-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+footer {
+  margin-top: 20px;
+}
+</style>
