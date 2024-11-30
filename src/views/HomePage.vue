@@ -191,28 +191,32 @@
   </script>
   
   <style scoped>
-  /* Tab Styles */
+  /* Global styles */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
   .tab-button {
-  background-color: transparent; /* ลบพื้นหลัง */
-  color: rgb(0, 0, 0); /* สีตัวหนังสือ */
-  border: none; /* ลบขอบ */
-  padding: 15px 30px; /* ปรับขนาด padding */
-  cursor: pointer;
-  font-size: 2.5rem; /* ขนาดฟอนต์ใหญ่ขึ้น */
-  transition: color 0.3s ease, transform 0.2s ease;
-  font-weight: 800;
-}
-
-/* เมื่อ tab ถูกเลือก */
-.tab-button.active {
-  color: #e50914; /* สีเมื่อ active */
-}
-
-/* เมื่อ hover */
-.tab-button:hover {
-  color: #e50914; /* สีเมื่อ hover */
-  transform: scale(1.05);
-}
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 2.5rem;
+    font-weight: 800;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .tab-button.active {
+    color: #e50914;
+  }
+  
+  .tab-button:hover {
+    color: #e50914;
+    transform: scale(1.05);
+  }
   
   /* Hero Section */
   .hero-section {
@@ -230,7 +234,6 @@
     background-image: url('@/assets/1595844471591.jpg');
     background-size: cover;
     background-position: center center;
-
   }
   
   /* Movie Slider */
@@ -239,6 +242,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
+  }
+  
+  .movies-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
   }
   
   .scroll-button {
@@ -252,53 +262,98 @@
     display: none;
   }
   
-  /* Show scroll buttons when hovering over the slider */
-  /* Movie Slider */
-.movie-slider {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow-x: hidden; /* ห้ามแสดง scrollbar */
-}
-
-/* Movie Container */
-.movies-container {
-  display: flex;
-  flex-wrap: nowrap; /* ไม่ให้แถวหัก */
-  overflow: hidden; /* ห้ามแสดง scrollbar */
-}
-
-/* Scroll Buttons */
-.scroll-button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  z-index: 2;
-  display: none;
-}
-
-/* Show scroll buttons when hovering over the slider */
-.movie-slider:hover .scroll-button {
-  display: block;
-}
-
-/* Hover effect for the movie posters */
-.movie-card {
-  width: 300px;
-  height: 450px;
-  margin: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect only on the poster itself */
-.movie-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-  </style>
+  .movie-slider:hover .scroll-button {
+    display: block;
+  }
   
+  .movie-card {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  @media (max-width: 1200px) {
+    .hero-section h1 {
+      font-size: 2.5rem;
+    }
+    .hero-section p {
+      font-size: 1rem;
+    }
+    .tab-button {
+      font-size: 2rem;
+      padding: 10px 20px;
+    }
+    .movie-card {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
+    .movies-container {
+    display: inline-block;
+    overflow: hidden;
+    height: 100%;
+    margin: auto;
+
+    }
+    .tab-button {
+    font-size: 1.2rem;
+    padding: 8px 15px;
+  }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-section h1 {
+      font-size: 2rem;
+    }
+    .hero-section p {
+      font-size: 0.875rem;
+    }
+    .tab-button {
+      font-size: 3.2rem;
+      padding: 12px 17px;
+    }
+    .movie-card {
+      width: 100%;
+      max-width: 200px;
+    }
+    /* Movie Slider */
+  .movie-slider {
+    position: relative;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+  
+  .movies-container {
+    display: inline-block;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  
+  .scroll-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 2;
+    display: none;
+  }
+  
+  .movie-slider:hover .scroll-button {
+    display: block;
+  }
+  .tab-button {
+    font-size: 3.2rem;
+    padding: 12px 17px;
+  }
+  }
+  </style>
