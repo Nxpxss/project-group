@@ -91,31 +91,33 @@ app.post('/api/accountName', (req, res) => {
 
 // API สำหรับบันทึกสถานะการเลือกดาว (favorite)
 app.post('/api/favorites', (req, res) => {
-  const { accountName, movieId, isSelected } = req.body;
+  const { accountName, movieId, isSelected, posterUrl } = req.body; // เพิ่ม posterUrl
 
   console.log('Received data for favorite update:', {
     accountName: accountName,
     movieId: movieId,
-    isSelected: isSelected
+    isSelected: isSelected,
+    posterUrl: posterUrl, // แสดง posterUrl
   });
 
-  // ตรวจสอบว่ามีการส่งค่า email, movieId และ isSelected หรือไม่
-  if (!accountName || !movieId || typeof isSelected !== 'boolean') {
-    return res.status(400).send({ message: 'Missing required fields: accountName, movieId, or isSelected' });
+  // ตรวจสอบว่ามีการส่งค่า accountName, movieId, isSelected และ posterUrl หรือไม่
+  if (!accountName || !movieId || typeof isSelected !== 'boolean' || !posterUrl) {
+    return res.status(400).send({ message: 'Missing required fields: accountName, movieId, isSelected, or posterUrl' });
   }
 
-  // ค้นหาผู้ใช้ที่มี email
+  // ค้นหาผู้ใช้ที่มี accountName
   const user = users.find(user => user.accountName === accountName);
   if (!user) {
     return res.status(404).send({ message: 'User not found' });
   }
 
-  // อัปเดตสถานะ favorite ของผู้ใช้
+  // อัปเดตสถานะ favorite ของผู้ใช้ รวมถึง posterUrl
   const favoriteIndex = favorites.findIndex(fav => fav.accountName === accountName && fav.movieId === movieId);
   if (favoriteIndex === -1) {
-    favorites.push({ accountName, movieId, isSelected });
+    favorites.push({ accountName, movieId, isSelected, posterUrl }); // เก็บ posterUrl
   } else {
     favorites[favoriteIndex].isSelected = isSelected;
+    favorites[favoriteIndex].posterUrl = posterUrl; // อัปเดต posterUrl
   }
   console.log('Updated favorites:', favorites);
 
@@ -136,6 +138,41 @@ app.get('/api/favorites', (req, res) => {
     // ถ้าไม่มีรายการ favorite ที่เลือก ให้ส่งกลับเป็น array ว่าง
     res.status(200).send({ favorites: [] });
   }
+});
+
+// API สำหรับลบสถานะ favorite (ลบแค่ movieId)
+app.delete('/api/favorites', (req, res) => {
+  const { accountName, movieId } = req.body;
+
+  console.log('Received data to delete favorite:', {
+    accountName: accountName,
+    movieId: movieId
+  });
+
+  // ตรวจสอบว่ามีการส่ง accountName และ movieId หรือไม่
+  if (!accountName || !movieId) {
+    return res.status(400).send({ message: 'Missing required fields: accountName or movieId' });
+  }
+
+  // ค้นหาผู้ใช้ที่มี accountName
+  const user = users.find(user => user.accountName === accountName);
+  if (!user) {
+    return res.status(404).send({ message: 'User not found' });
+  }
+
+  // ค้นหาบันทึก favorite ที่ต้องการลบ
+  const favoriteIndex = favorites.findIndex(fav => fav.accountName === accountName && fav.movieId === movieId);
+  if (favoriteIndex === -1) {
+    return res.status(404).send({ message: 'Favorite not found' });
+  }
+
+  // ลบรายการโปรดที่พบ
+  favorites.splice(favoriteIndex, 1);
+
+  console.log('Updated favorites:', favorites);
+
+  // ส่งคำตอบกลับหลังจากลบรายการโปรด
+  res.status(200).send({ message: 'Favorite deleted successfully' });
 });
 
 // รันเซิร์ฟเวอร์บนพอร์ต 3000

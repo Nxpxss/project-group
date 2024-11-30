@@ -15,6 +15,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import axios from 'axios';
 
@@ -42,6 +43,7 @@ export default {
       } else {
         this.deleteFavoriteStatus(); // ลบสถานะการเลือกดาวออกจากฐานข้อมูล
       }
+
       this.$emit('toggle-favorite', this.movie, this.isSelected); // ส่งข้อมูลไปยัง MyList
     },
 
@@ -71,33 +73,35 @@ export default {
       }
     },
 
-    // ฟังก์ชันในการบันทึกสถานะโปรดลงในเซิร์ฟเวอร์
     async saveFavoriteStatus() {
-      const accountName = localStorage.getItem('accountName');
-      const movieId = this.movie.id;
+  const accountName = localStorage.getItem('accountName');
+  const movieId = this.movie.id;
 
-      if (!accountName) {
-        console.error('User is not logged in');
-        return;
-      }
+  if (!accountName) {
+    console.error('User is not logged in');
+    return;
+  }
 
-      try {
-        console.log('Sending data to server:', {
-          accountName: accountName,
-          movieId: movieId,
-          isSelected: this.isSelected,
-        });
-        const response = await axios.post('http://localhost:3000/api/favorites', {
-          accountName: accountName,
-          movieId: movieId,
-          isSelected: this.isSelected,
-        });
-        console.log('Server response:', response.data);
-      } catch (error) {
-        console.error('Error saving favorite status:', error);
-      }
-    },
+  try {
+    console.log('Sending data to server:', {
+      accountName: accountName,
+      movieId: movieId,
+      isSelected: this.isSelected,
+      posterUrl: this.movie.posterUrl // ส่ง posterUrl ไปด้วย
+    });
 
+    const response = await axios.post('http://localhost:3000/api/favorites', {
+      accountName: accountName,
+      movieId: movieId,
+      isSelected: this.isSelected,
+      posterUrl: this.movie.posterUrl // บันทึก posterUrl บนเซิร์ฟเวอร์
+    });
+
+    console.log('Server response:', response.data);
+  } catch (error) {
+    console.error('Error saving favorite status:', error);
+  }
+},
     // ฟังก์ชันในการลบสถานะโปรดออกจากเซิร์ฟเวอร์
     async deleteFavoriteStatus() {
       const accountName = localStorage.getItem('accountName');
@@ -127,7 +131,6 @@ export default {
   },
 };
 </script>
-
 
 <style scoped>
 .card {
