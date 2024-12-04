@@ -1,5 +1,5 @@
 <template>
-  <div class="signup-container" :style="{ backgroundImage: 'url(' + require('@/assets/backgrounlogin.jpg') + ')', backgroundSize: 'cover', minHeight: '100vh', display: 'flex', alignItems: 'center' }">
+  <div class="francois-one-regular signup-container" :style="{ backgroundImage: 'url(' + require('@/assets/backgrounlogin.jpg') + ')', backgroundSize: 'cover', minHeight: '100vh', display: 'flex', alignItems: 'center' }">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-6 col-lg-6">
@@ -19,7 +19,10 @@
                 <label for="confirmPassword" class="form-label text-white">Confirm Password</label>
                 <input type="password" v-model="confirmPassword" class="form-control form-control-lg" required placeholder="Confirm your password" />
               </div>
-              <button type="submit" class="btn btn-danger w-100 py-2 btn-lg">Sign Up</button>
+              <div class="d-flex justify-content-center align-items-center mt-5">
+                <button type="submit" class="btn btn-danger w-100 py-2 btn-md">SIGN UP</button>
+              </div>
+              
               <p v-if="errorMessage" class="text-danger mt-3">{{ errorMessage }}</p>
               <p v-if="successMessage" class="text-success mt-3">{{ successMessage }}</p>
             </form>
@@ -91,3 +94,29 @@ export default {
   }
 };
 </script>
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&display=swap');
+.francois-one-regular {
+  font-family: "Francois One", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+.btn {
+  background-color: rgb(162, 91, 255);
+  border-color: rgb(162, 91, 255);
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px;
+  transition: background-color 0.3s;
+}
+.btn:hover {
+  background-color: rgb(211, 178, 255);
+  color: black;
+}
+.form-control{
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border-color: rgb(162, 91, 255);
+  opacity: 1;
+}
+</style>

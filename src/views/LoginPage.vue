@@ -142,10 +142,7 @@ h1 {
   transition: background-color 0.3s;
 }
 
-.btn:hover {
-  background-color: rgb(211, 178, 255);
-  color: black;
-}
+
 
 .text{
   color: rgb(162, 91, 255);
