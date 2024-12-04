@@ -100,9 +100,9 @@
         <Footer />
       </div>
     </div>
-  </template>
+</template>
   
-  <script>
+<script>
   import Navbar from '@/components/Navbar.vue';
   import Footer from '@/components/Footer.vue';
   import MovieCard from '@/components/MovieCard.vue';
@@ -188,9 +188,9 @@
       }
     } 
   };
-  </script>
+</script>
   
-  <style scoped>
+<style scoped>
   /* Global styles */
   body {
     margin: 0;
