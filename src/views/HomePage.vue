@@ -6,14 +6,12 @@
       </div>
   
       <!-- Hero Section -->
-      <div class="hero-section d-flex align-items-center justify-content-center text-center text-white mb-4">
-        <div class="overlay w-100 h-100 position-absolute bg-dark opacity-80"></div>
-        <div class="container position-relative z-index-1">
-          <h1 class="display-3 fw-bold">Welcome to Netflix Clone</h1>
-          <p class="lead">Watch Movies and TV Shows anytime, anywhere</p>
-          <button class="btn btn-danger btn-lg">Watch Now</button>
-        </div>
+      <div class="francois-one-regular hero-section d-flex align-items-center justify-content-center text-center text-white mb-4">
+        <video autoplay loop class="w-100">
+          <source :src="videoSource" type="video/mp4" />
+        </video>
       </div>
+
   
       <!-- Tab Buttons -->
       <div class="tabs d-flex justify-content-center mt-3">
@@ -116,6 +114,7 @@
     },
     data() {
       return {
+        videoSource: require('@/assets/venom.mp4'), 
         selectedTab: 'Suggested',
         categories: ['Suggested', 'Action', 'Horror', 'Romance'],
         Suggested: [
@@ -191,7 +190,13 @@
 </script>
   
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&display=swap');
   /* Global styles */
+  .francois-one-regular {
+  font-family: "Francois One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
   body {
     margin: 0;
     padding: 0;
@@ -224,7 +229,15 @@
     height: 100vh;
     overflow: hidden;
   }
-  
+  .video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* พื้นหลังสีดำโปร่งแสง */
+}
   .overlay {
     position: absolute;
     top: 0;
