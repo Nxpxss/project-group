@@ -29,7 +29,7 @@
         <p v-if="errorMessage" class="text-danger mt-3">{{ errorMessage }}</p>
       </form>
       <div class="text-center text-white mt-4">
-        <p>New to Account? <router-link to="/signup" class="text-danger">Sign up now</router-link></p>
+        <p>New to Account? <router-link to="/signup" class="text">Sign up now</router-link></p>
       </div>
     </div>
   </div>
@@ -134,8 +134,8 @@ h1 {
 }
 
 .btn {
-  background-color: #e50914;
-  border-color: #e50914;
+  background-color: rgb(162, 91, 255);
+  border-color: rgb(162, 91, 255);
   font-size: 1.2rem;
   font-weight: bold;
   padding: 12px;
@@ -143,11 +143,12 @@ h1 {
 }
 
 .btn:hover {
-  background-color: #b20710;
+  background-color: rgb(211, 178, 255);
+  color: black;
 }
 
-.text-danger {
-  color: #e50914;
+.text{
+  color: rgb(162, 91, 255);
 }
 
 .text-white {
