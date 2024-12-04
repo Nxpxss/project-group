@@ -73,7 +73,7 @@ export default {
 };
 </script>
 
-<!-- <style scoped>
+<style scoped>
 /* การตั้งค่าพื้นฐานสำหรับการจัด layout */
 .profile-container {
   max-width: 400px;
@@ -115,7 +115,7 @@ h2 {
 
 /* สไตล์สำหรับปุ่ม */
 .btn-danger {
-  background-color: #e50914;  /* สีพื้นหลังปุ่ม */
+  background-color: rgb(162, 91, 255);  /* สีพื้นหลังปุ่ม */
   color: white;
   border: none;
   padding: 12px 20px;
@@ -128,12 +128,12 @@ h2 {
 }
 
 .btn-danger:hover {
-  background-color: #b20710;
+  background-color: rgb(162, 91, 255);
 }
 
 /* การเพิ่ม Transition ให้กับปุ่มเมื่อ Hover */
 .btn-danger:focus {
   outline: none;
-  box-shadow: 0 0 5px #e50914;
+  box-shadow: 0 0 5px rgb(162, 91, 255);
 }
-</style> -->
+</style> 

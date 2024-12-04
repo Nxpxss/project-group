@@ -21,7 +21,7 @@
             <a href="/" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
-            <a href="/movielist" class="nav-link">Movies</a>
+            <a href="/movie" class="nav-link">Movies</a>
           </li>
           <li class="nav-item">
             <a href="/MyList" class="nav-link">My List</a>

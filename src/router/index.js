@@ -8,6 +8,7 @@ import MovieDetailPage from '@/views/MovieDetailPage.vue';
 import MyListPage  from '@/views/MyList.vue';
 import MovieCard from '@/components/MovieCard.vue';
 import Account from '@/views/Account.vue';
+import Movie  from '@/views/Movie.vue';
 
 // ฟังก์ชันเพื่อตรวจสอบสถานะการล็อกอิน
 function isLoggedIn() {
@@ -20,6 +21,7 @@ const routes = [
   { path: '/account', component: AccountPage},
   { path: '/signup', component: SignupPage },
   { path: '/Mylist', component: MyListPage },
+  { path: '/movie', component:Movie },
   {
     path: '/profile',
     component: ProfilePage,
