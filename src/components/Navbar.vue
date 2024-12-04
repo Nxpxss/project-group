@@ -1,7 +1,9 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark">
+  <nav class="francois-one-regular navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <router-link class="navbar-brand" to="/">Netflix Clone</router-link>
+        <a href="/" class="navbar-brand">
+          <img src="../assets/Movie Night.png" width="60" height="50">OVEFLIX
+        </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -16,24 +18,26 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <router-link class="nav-link" to="/">Home</router-link>
+            <a href="/" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/movies">Movies</router-link>
+            <a href="/movielist" class="nav-link">Movies</a>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/MyList">My List</router-link>
+            <a href="/MyList" class="nav-link">My List</a>
+            
           </li>
 
           <!-- Show account name and logout button if logged in -->
           <li class="nav-item d-flex align-items-center" v-if="accountName">
             <span class="nav-link">{{ accountName }}</span>
-            <button class="btn btn-link nav-link text-white" @click="logout">Logout</button>
+            <button class="nav-link" @click="logout">Sign out</button>
           </li>
+          
 
           <!-- Show Sign In button if no account name -->
           <li class="nav-item" v-else>
-            <router-link class="nav-link sign-in" to="/login">Sign In</router-link>
+            <a href="/login" class="nav-link sign-in">Sign In</a>
           </li>
         </ul>
       </div>
@@ -114,17 +118,22 @@ export default {
 
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&display=swap');
 /* Navbar styles */
 .navbar {
-  background-color: #141414; /* Dark color like Netflix */
+  background-color: black; /* Dark color like Netflix */
   padding: 1rem 2rem;
   font-family: Arial, sans-serif;
 }
-
+.francois-one-regular {
+  font-family: "Francois One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 .navbar-brand {
   font-size: 2rem;
   font-weight: bold;
-  color: #e50914; /* Red color like Netflix logo */
+  color: rgb(162, 91, 255);
   letter-spacing: 1px;
   transition: color 0.3s;
 }
@@ -141,7 +150,7 @@ export default {
 }
 
 .nav-link:hover {
-  color: #e50914; /* Change color on hover like Netflix */
+  color: rgb(162, 91, 255); /* Change color on hover like Netflix */
 }
 
 .nav-item {
@@ -153,15 +162,15 @@ export default {
 }
 
 .sign-in {
-  border: 1px solid #e50914;
+  border: 1px solid white;
   padding: 0.5rem 1rem;
-  border-radius: 4px;
-  color: #e50914;
+  border-radius: 6px;
+  color: white;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .sign-in:hover {
-  background-color: #e50914;
-  color: #ffffff;
+  background-color: rgb(162, 91, 255);
+  color: #000000;
 }
 </style>
