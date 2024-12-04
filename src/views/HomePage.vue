@@ -14,7 +14,7 @@
 
   
       <!-- Tab Buttons -->
-      <div class="tabs d-flex justify-content-center mt-3">
+      <div class="francois-one-regular tabs d-flex justify-content-center mt-3">
         <button 
           v-for="(category, index) in categories" 
           :key="index" 
@@ -25,7 +25,7 @@
       </div>
   
       <!-- Movie Sections -->
-      <div v-if="selectedTab === 'Suggested'" class="suggested-movies-section">
+      <div v-if="selectedTab === 'Suggested'" class="francois-one-regular suggested-movies-section">
         <div class="container mt-4 mb-5">
           <h1 class="text-white mb-4">Suggested</h1>
           <div class="movie-slider">

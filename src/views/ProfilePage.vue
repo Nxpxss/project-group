@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid d-flex flex-column align-items-center justify-content-center vh-100" style="background-color: #141414;">
+  <div class="francois-one-regular container-fluid d-flex flex-column align-items-center justify-content-center vh-100" style="background-color: #141414;">
     <div class="rounded-square overflow-hidden border border-white mb-4" style="width: 120px; height: 120px;">
       <img src="@/assets/Netflix-avatar1.png" alt="Profile" class="img-fluid w-100 h-100" style="object-fit: cover;" />
     </div>
@@ -74,13 +74,35 @@ export default {
 </script>
 
 <style scoped>
-/* การตั้งค่าพื้นฐานสำหรับการจัด layout */
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&display=swap');
+.francois-one-regular {
+  font-family: "Francois One", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+.btn {
+  background-color: rgb(162, 91, 255);
+  border-color: rgb(162, 91, 255);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px;
+  transition: background-color 0.3s;
+}
+.btn:hover {
+  background-color: rgb(211, 178, 255);
+  color: black;
+}
+
+
+
+
+/* การตั้งค่าพื้นฐานสำหรับการจัด layout 
 .profile-container {
   max-width: 400px;
   margin: 100px auto;
   padding: 20px;
   text-align: center;
-  background-color: #141414;  /* สีพื้นหลังแบบ Netflix */
+  background-color: #141414; สีพื้นหลังแบบ Netflix
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   color: rgb(51, 50, 50);
@@ -89,33 +111,31 @@ export default {
   align-items: center;
 }
 
-/* การตั้งค่ารูปโปรไฟล์ */
+/* การตั้งค่ารูปโปรไฟล์
 .profile-image {
   width: 120px;
   height: 120px;
   overflow: hidden;
   margin-bottom: 20px;
-  border: 3px solid #f1f1f1; /* กรอบสีแดงแบบ Netflix */
+  border: 3px solid #f1f1f1; /* กรอบสีแดงแบบ Netflix 
 }
 
-/* สไตล์ของรูปภาพภายในโปรไฟล์ */
-.profile-image img {
+/* สไตล์ของรูปภาพภายในโปรไฟล์ 
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* ขนาดของหัวข้อ */
+/* ขนาดของหัวข้อ 
 h2 {
   font-size: 22px;
   margin-bottom: 20px;
-  color: #fff; /* สีของตัวอักษร */
-  text-transform: uppercase; /* ทำให้ตัวอักษรเป็นตัวพิมพ์ใหญ่ */
+  color: #fff; /* สีของตัวอักษร 
+  text-transform: uppercase; /* ทำให้ตัวอักษรเป็นตัวพิมพ์ใหญ่ 
 }
 
-/* สไตล์สำหรับปุ่ม */
-.btn-danger {
-  background-color: rgb(162, 91, 255);  /* สีพื้นหลังปุ่ม */
+/* สไตล์สำหรับปุ่ม 
+  background-color: rgb(162, 91, 255);  สีพื้นหลังปุ่ม 
   color: white;
   border: none;
   padding: 12px 20px;
@@ -124,16 +144,16 @@ h2 {
   transition: background-color 0.3s ease;
   width: 100%;
   margin-top: 20px;
-  text-transform: uppercase; /* ทำให้ตัวอักษรเป็นตัวพิมพ์ใหญ่ */
+  text-transform: uppercase; /* ทำให้ตัวอักษรเป็นตัวพิมพ์ใหญ่ 
 }
 
 .btn-danger:hover {
-  background-color: rgb(162, 91, 255);
+  background-color: #b20710;
 }
 
-/* การเพิ่ม Transition ให้กับปุ่มเมื่อ Hover */
+/* การเพิ่ม Transition ให้กับปุ่มเมื่อ Hover
 .btn-danger:focus {
   outline: none;
-  box-shadow: 0 0 5px rgb(162, 91, 255);
-}
+  box-shadow: 0 0 5px #e50914;
+} */
 </style> 
