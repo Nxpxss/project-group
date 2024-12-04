@@ -2,17 +2,28 @@
   <div>
     <!-- Display Navbar -->
     <Navbar />
-    <div v-if="favoriteMovies && favoriteMovies.length > 0">
-      <h2>My Favorite Movies</h2>
-      <div class="card">
-        <MovieCard
-          v-for="movie in favoriteMovies"
-          :key="movie.id"
-          :movie="movie"
-          :isSelected="isFavorite(movie.id)"
-          @toggle-favorite="handleToggleFavorite"
-        />
+    <div class="francois-one-regular" v-if="favoriteMovies && favoriteMovies.length > 0">
+  <h1 class="text-center fw-bold mt-5 mb-5">My Favorite Movies</h1>
+  <div class="container">
+    <div class="row">
+      <div 
+        class="col-md-3 mb-5" 
+        v-for="movie in favoriteMovies" 
+        :key="movie.id"
+      >
+        <div class="card">
+          <MovieCard
+            :movie="movie"
+            :isSelected="isFavorite(movie.id)"
+            @toggle-favorite="handleToggleFavorite"
+          />
+        </div>
       </div>
+    </div>
+  </div>
+
+
+      
     </div>
     <div v-else>
       <h2>No Favorite Movies Yet</h2>
@@ -80,6 +91,12 @@ export default {
 
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&display=swap');
+.francois-one-regular {
+  font-family: "Francois One", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
 h2 {
   margin-top: 20px;
   font-size: 24px;

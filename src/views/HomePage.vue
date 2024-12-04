@@ -124,6 +124,7 @@
           { id: 4, title: 'Movie 4', description: 'Description 4', posterUrl: require('@/assets/Suggested4.jpg') },
           { id: 5, title: 'Movie 5', description: 'Description 5', posterUrl: require('@/assets/Suggested5.jpg') }
         ],
+        
         Action: [
           { id: 6, title: 'Action Movie 1', description: 'Action Description 1', posterUrl: require('@/assets/Action1.webp') },
           { id: 7, title: 'Action Movie 2', description: 'Action Description 2', posterUrl: require('@/assets/Action2.webp') },
@@ -215,11 +216,11 @@
   }
   
   .tab-button.active {
-    color: #e50914;
+    color: rgb(162, 91, 255);
   }
   
   .tab-button:hover {
-    color: #e50914;
+    color: rgb(162, 91, 255);
     transform: scale(1.05);
   }
   
