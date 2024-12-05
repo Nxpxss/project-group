@@ -1,7 +1,7 @@
 <template>
   <div class="login-container">
     <div class="login-box">
-      <h1 class="text-center text-white mb-4">Sign In</h1>
+      <h1 class="text-center text-white mb-4">SIGN IN</h1>
       <form @submit.prevent="login">
         <div class="mb-3">
           <label for="email" class="form-label text-white">Email</label>
@@ -25,8 +25,8 @@
             required 
           />
         </div>
-        <button type="submit" class="btn btn-danger w-100">Log In</button>
-        <p v-if="errorMessage" class="text-danger mt-3">{{ errorMessage }}</p>
+        <button type="submit" class="btn w-100">SIGN IN</button>
+        <p v-if="errorMessage" class="text mt-3">{{ errorMessage }}</p>
       </form>
       <div class="text-center text-white mt-4">
         <p>New to Account? <router-link to="/signup" class="text">Sign up now</router-link></p>
@@ -95,8 +95,8 @@ export default {
 <style scoped>
 /* ตัวกำหนดพื้นหลังของหน้า login */
 .login-container {
-  background: url('@/assets/backgrounlogin.jpg') no-repeat center center;
-  background-size: cover;
+  background: url('@/assets/ppblue.jpg') no-repeat center center;
+  background-size: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -127,7 +127,10 @@ h1 {
   color: #fff;
   padding: 10px;
 }
-
+.btn:hover {
+  background-color: rgb(211, 178, 255);
+  color: black;
+}
 .form-control:focus {
   background-color: #fdfdfd;
   border-color: #3b3939;

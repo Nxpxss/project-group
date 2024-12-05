@@ -1,5 +1,7 @@
 <template>
-  <div class="francois-one-regular container-fluid d-flex flex-column align-items-center justify-content-center vh-100" style="background-color: #141414;">
+  <div class="francois-one-regular container-fluid d-flex flex-column align-items-center justify-content-center vh-100" 
+  :style="{ backgroundImage: 'url(' + require('@/assets/ppblue.jpg') + ')', backgroundSize: 'cover', minHeight: '100vh', display: 'flex', alignItems: 'center' }"
+  >
     <div class="rounded-square overflow-hidden border border-white mb-4" style="width: 120px; height: 120px;">
       <img src="@/assets/Netflix-avatar1.png" alt="Profile" class="img-fluid w-100 h-100" style="object-fit: cover;" />
     </div>

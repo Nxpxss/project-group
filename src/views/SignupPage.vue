@@ -1,5 +1,5 @@
 <template>
-  <div class="francois-one-regular signup-container" :style="{ backgroundImage: 'url(' + require('@/assets/backgrounlogin.jpg') + ')', backgroundSize: 'cover', minHeight: '100vh', display: 'flex', alignItems: 'center' }">
+  <div class="francois-one-regular signup-container" :style="{ backgroundImage: 'url(' + require('@/assets/ppblue.jpg') + ')', backgroundSize: 'cover', minHeight: '100vh', display: 'flex', alignItems: 'center' }">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-6 col-lg-6">
@@ -24,7 +24,7 @@
               </div>
               
               <p v-if="errorMessage" class="text-danger mt-3">{{ errorMessage }}</p>
-              <p v-if="successMessage" class="text-success mt-3">{{ successMessage }}</p>
+              <p v-if="successMessage" class="text-white mt-3">{{ successMessage }}</p>
             </form>
           </div>
         </div>

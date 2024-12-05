@@ -1,5 +1,6 @@
 <template>
-  <div class="francois-one-regular container-fluid d-flex justify-content-center align-items-center min-vh-100 bg-dark">
+  <div class="francois-one-regular container-fluid d-flex justify-content-center align-items-center min-vh-100 bg-dark"
+  :style="{ backgroundImage: 'url(' + require('@/assets/ppblue.jpg') + ')', backgroundSize: 'cover', minHeight: '100vh', display: 'flex', alignItems: 'center' }">
     <div class="card shadow-lg border-0 rounded-4" style="width: 100%; max-width: 600px; background-color: rgba(20, 20, 20, 0.95);">
       <div class="card-body p-5 text-center">
         <!-- เพิ่มความหนาของฟอนต์และใช้ฟอนต์ที่เรียบง่าย -->
