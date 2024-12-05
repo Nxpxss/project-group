@@ -1,51 +1,58 @@
 <template>
-    <div>
-      <Navbar />
-      <div class="movie-watch-page container-fluid">
-        <div class="row movie-background">
-          <!-- Video Player Section -->
-          <div class="col-md-12 video-container">
-            <video 
-              class="video-player" 
-              controls 
-              autoplay 
-              :poster="movie.posterUrl">
-              <source :src="movie.videoUrl" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-          </div>
-          <!-- Movie Information Overlay -->
-          <div class="col-md-15 movie-info">
-            <div class="container">
-
-            </div>
-          </div>
+  <div>
+    <Navbar />
+    <div class="movie-watch-page container-fluid">
+      <div class="row movie-background">
+        <!-- Video Player Section -->
+        <div v-if="movie" class="movie-watch-page col-md-12 video-container">
+          <video 
+            class="video-player" 
+            controls 
+            autoplay 
+            :poster="movie.posterUrl">
+            <source :src="movie.videoUrl" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          <h1>{{ movie.title }}</h1>
         </div>
       </div>
-      <Footer />
     </div>
+    <Footer />
+  </div>
 </template>
+
   
 <script>
   import Navbar from '@/components/Navbar.vue';
   import Footer from '@/components/Footer.vue';
   
   export default {
+    
     name: 'MovieWatchPage',
+    props: ['id'], // รับ id จาก router
     components: {
       Navbar,
       Footer
     },
     data() {
       return {
-        movie: {
-          title: 'VENOM',
-          description: 'This is a detailed description of the movie.',
-          posterUrl: 'https://via.placeholder.com/1200x600', // URL ของภาพพื้นหลังหรือโปสเตอร์
-          videoUrl: 'https://youtu.be/Do54f1Dp0h4?si=H3t9f7aVAxGuNoes' // URL ของวิดีโอที่จะเล่น
-        }
+        movie: null, // เก็บข้อมูลหนัง
       };
-    }
+    },
+    async created() {
+    // จำลองการดึงข้อมูลหนัง
+    const movies = [
+  { id: 1, title: 'Ve', videoUrl: require('@/assets/venom.mp4'), posterUrl: require('@/assets/A1.jpg') },
+  { id: 2, title: 'Movie 2', videoUrl: 'https://example.com/video2.mp4', posterUrl: 'https://example.com/poster2.jpg' }
+  ];
+      this.movie = movies.find(movie => movie.id === parseInt(this.id));
+    },
+    methods: {
+  getYouTubeEmbedUrl(url) {
+    const videoId = url.split('v=')[1]?.split('&')[0] || url.split('/').pop();
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&modestbranding=1&rel=0&controls=1`;
+  }
+  }
   };
   </script>
   

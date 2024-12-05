@@ -103,7 +103,7 @@
           { id: 21, title: 'MONEY HEIST', description: 'DRAMA, 2019', posterUrl: require('@/assets/mn1.jpg') },
           { id: 22, title: 'DEADPOOL', description: 'DRAMA, 2019', posterUrl: require('@/assets/dp.jpg') },
           { id: 23, title: 'MOANA2', description: 'DRAMA, 2019', posterUrl: require('@/assets/moana.jpg') },
-          { id: 24, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/megan.jpg') },
+          { id: 24, title: 'MEGAN', description: 'DRAMA, 2019', posterUrl: require('@/assets/megan.jpg') },
           { id: 25, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },
           { id: 26, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },
           { id: 27, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },

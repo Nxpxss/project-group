@@ -32,7 +32,12 @@ const routes = [
     component: AccountPage, // ตรวจสอบว่าชื่อ component ตรงกับชื่อที่นำเข้า
     meta: { requiresAuth: true } // กำหนดว่าหน้านี้ต้องการการยืนยันตัวตน
   },
-  { path: '/movie/:id', component: MovieDetailPage },
+  {
+    path: '/movie/:id',
+    name: 'MovieWatch',
+    component: MovieDetailPage,
+    props: true,
+  },
   { path: '/mylist/movie/:id', component: MyListPage }, // เส้นทางใหม่สำหรับรายการภาพยนตร์
 ];
 

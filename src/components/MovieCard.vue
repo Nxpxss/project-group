@@ -15,7 +15,7 @@
           @click="toggleSelection"
           style="font-size: 2rem; cursor: pointer; color: gold; margin-right: 10px;"
         ></i>
-        <a :href="`/movie/${movie.id}`" class="btn btn-dark">Watch Now</a>
+        <a :href="`/movie/${movie.id}`" @click="goToWatchPage" class="btn btn-dark">Watch Now</a>
       </div>
     </div>
   </div>
@@ -34,7 +34,9 @@ export default {
       isSelected: false, // Favorite status
     };
   },
+  
   methods: {
+    
     toggleSelection() {
       this.isSelected = !this.isSelected;
       console.log(`Movie "${this.movie.title}" favorite status: ${this.isSelected ? 'Selected' : 'Not Selected'}`);
@@ -115,6 +117,11 @@ export default {
         console.error('Error deleting favorite status:', error);
       }
     },
+    methods: {
+    goToWatchPage() {
+    this.$router.push({ name: 'MovieWatch', params: { id: this.movie.id } });
+  }
+}
   },
   mounted() {
     this.loadFavoriteStatus(); // Load favorite status on component mount
