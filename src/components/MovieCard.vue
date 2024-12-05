@@ -2,6 +2,8 @@
   <div class="card">
     <img :src="movie.posterUrl" class="card-img-top" alt="Movie Poster" />
     <div class="card-body">
+      <!-- ชื่อหนัง -->
+      <h5 class="movie-title text-center text-dark mb-3">{{ movie.title }}</h5>
       <div class="button-container">
         <i
           class="fa"
