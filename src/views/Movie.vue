@@ -4,15 +4,15 @@
       <Navbar />
 
       <!-- Tab Buttons -->
-<div class="francois-one-regular tabs d-flex justify-content-center mt-3">
-  <button 
-    v-for="(category, index) in categories" 
-    :key="index" 
-    :class="['tab-button', { active: selectedTab === category }]" 
-    @click="selectedTab = category">
-    {{ category }}
-  </button>
-</div>
+      <div class=" francois-one-regular tabs d-flex justify-content-center flex-wrap mt-3">
+    <button 
+      v-for="(category, index) in categories" 
+      :key="index" 
+      :class="['tab-button btn btn-outline-light', { active: selectedTab === category }]" 
+      @click="selectedTab = category">
+      {{ category }}
+    </button>
+  </div>
 
 <!-- Movie Sections -->
 <div v-if="selectedTab === 'Suggested'" class="francois-one-regular suggested-movies-section">
@@ -231,20 +231,8 @@
     margin: 10px; /* เพิ่ม margin-right */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-.tab-button {
-    background-color: transparent;
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 15px 30px;
-    cursor: pointer;
-    font-size: 2.5rem;
-    font-weight: 800;
-    transition: color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .tab-button.active {
-    color: rgb(162, 91, 255);
-  }
+
+
   
   .tab-button:hover {
     color: rgb(162, 91, 255);
@@ -257,6 +245,42 @@
   footer {
     margin-top: 20px;
   }
-  
+  .tabs {
+  flex-wrap: wrap; /* Wrap buttons to the next row on small screens */
+}
+
+/* Styles for each tab button */
+.tab-button {
+  color: black;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
+  min-width: 100px; /* Ensure buttons have a reasonable minimum width */
+  text-align: center;
+}
+
+/* Highlight active tab */
+.tab-button.active {
+  background-color: rgb(162, 91, 255);
+  color: white;
+  border-color: rgb(162, 91, 255);
+}
+
+/* Adjust font size and padding for smaller screens */
+@media (max-width: 768px) {
+  .tab-button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .tab-button {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
   
 </style>

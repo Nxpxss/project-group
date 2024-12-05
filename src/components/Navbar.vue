@@ -1,9 +1,9 @@
 <template>
-  <nav class="francois-one-regular navbar navbar-expand-lg navbar-dark">
+  <nav class="francois-one-regular navbar navbar-expand-lg navbar-dark w-100">
     <div class="container">
-        <a href="/" class="navbar-brand">
-          <img src="../assets/Movie Night.png" width="60" height="50">OVEFLIX
-        </a>
+      <a href="/" class="navbar-brand">
+        <img src="../assets/Movie Night.png" width="60" height="50" alt="Logo"> OVEFLIX
+      </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -25,16 +25,12 @@
           </li>
           <li class="nav-item">
             <a href="/MyList" class="nav-link">My List</a>
-            
           </li>
-
           <!-- Show account name and logout button if logged in -->
           <li class="nav-item d-flex align-items-center" v-if="accountName">
             <span class="nav-link">{{ accountName }}</span>
-            <button class="nav-link" @click="logout">Sign out</button>
+            <button class="btn btn-link nav-link" @click="logout">Sign out</button>
           </li>
-          
-
           <!-- Show Sign In button if no account name -->
           <li class="nav-item" v-else>
             <a href="/login" class="nav-link sign-in">Sign In</a>
@@ -115,10 +111,9 @@ export default {
 };
 </script>
 
-
-
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Francois+One&display=swap');
+
 /* Navbar styles */
 .navbar {
   background-color: black; /* Dark color like Netflix */
@@ -158,7 +153,7 @@ export default {
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%288, 8, 8, 0.8%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 .sign-in {
