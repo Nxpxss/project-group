@@ -3,7 +3,11 @@
     <img :src="movie.posterUrl" class="card-img-top" alt="Movie Poster" />
     <div class="card-body">
       <!-- ชื่อหนัง -->
-      <h5 class="movie-title text-center text-dark mb-3">{{ movie.title }}</h5>
+      <h5 class="francois-one-regular movie-title text-center text-dark mb-3">{{ movie.title }}</h5>
+      <!-- คำอธิบายหนัง -->
+      <!-- <p class="movie-description text-center text-muted mb-3">
+        {{ movie.description }}
+      </p> -->
       <div class="button-container">
         <i
           class="fa"
@@ -119,6 +123,13 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&display=swap');
+  /* Global styles */
+  .francois-one-regular {
+  font-family: "Francois One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 /* สำหรับ container ที่ห่อหุ้มการ์ดทั้งหมด */
 .movies-container {
   display: flex;

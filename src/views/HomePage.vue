@@ -26,7 +26,7 @@
   
       <!-- Movie Sections -->
       <div v-if="selectedTab === 'Suggested'" class="francois-one-regular suggested-movies-section">
-        <div class="container mt-4 mb-5">
+        <div class="container mt-4 mb-5 ">
           <h1 class="text-white mb-4">Suggested</h1>
           <div class="movie-slider">
             <button @click="scrollLeft('suggestedSlider')" class="scroll-button left">
@@ -118,11 +118,11 @@
         selectedTab: 'Suggested',
         categories: ['Suggested', 'Action', 'Horror', 'Romance'],
         Suggested: [
-          { id: 1, title: 'Movie 1', description: 'Description 1', posterUrl: require('@/assets/Suggested1.webp') },
-          { id: 2, title: 'Movie 2', description: 'Description 2', posterUrl: require('@/assets/Suggested2.jpg') },
-          { id: 3, title: 'Movie 3', description: 'Description 3', posterUrl: require('@/assets/Suggested3.jpg') },
-          { id: 4, title: 'Movie 4', description: 'Description 4', posterUrl: require('@/assets/Suggested4.jpg') },
-          { id: 5, title: 'Movie 5', description: 'Description 5', posterUrl: require('@/assets/Suggested5.jpg') }
+          { id: 1, title: 'GoodFellas', description: 'Goodfellas (1990)', posterUrl: require('@/assets/Suggested1.webp') },
+          { id: 2, title: 'AFTER' , description: 'Description 2', posterUrl: require('@/assets/Suggested2.jpg') },
+          { id: 3, title: 'INVASION', description: 'Description 3', posterUrl: require('@/assets/Suggested3.jpg') },
+          { id: 4, title: 'ARCHER', description: "Surviver it's a hard game.", posterUrl: require('@/assets/Suggested4.jpg') },
+          { id: 5, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') }
         ],
         
         Action: [
@@ -283,7 +283,7 @@
   .movie-card {
     width: 100%;
     max-width: 300px;
-    margin: 10px;
+    margin: 10px; /* เพิ่ม margin-right */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
