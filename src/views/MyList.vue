@@ -26,7 +26,7 @@
       
     </div>
     <div v-else>
-      <h2>No Favorite Movies Yet</h2>
+      <h2 class="text-center">No Favorite Movies Yet</h2>
     </div>
 
     <!-- Display Footer -->
