@@ -126,25 +126,25 @@
         ],
         
         Action: [
-          { id: 6, title: 'Matrix ', description: 'Action Description 1', posterUrl: require('@/assets/Action1.webp') },
-          { id: 7, title: 'SKYFALL', description: 'Action Description 2', posterUrl: require('@/assets/Action2.webp') },
-          { id: 8, title: 'DUNKIRK', description: 'Action Description 3', posterUrl: require('@/assets/Action3.webp') },
-          { id: 9, title: 'PULP FICTION', description: 'Action Description 3', posterUrl: require('@/assets/Action4.webp') },
-          { id: 10, title: 'VENOM', description: 'Action Description 3', posterUrl: require('@/assets/A1.jpg') }
+          { id: 17, title: 'Matrix ', description: 'Action Description 1', posterUrl: require('@/assets/Action1.webp') },
+          { id: 18, title: 'SKYFALL', description: 'Action Description 2', posterUrl: require('@/assets/Action2.webp') },
+          { id: 19, title: 'DUNKIRK', description: 'Action Description 3', posterUrl: require('@/assets/Action3.webp') },
+          { id: 20, title: 'PULP FICTION', description: 'Action Description 3', posterUrl: require('@/assets/Action4.webp') },
+          { id: 21, title: 'VENOM', description: 'Action Description 3', posterUrl: require('@/assets/A1.jpg') },
         ],
         Horror: [
-          { id: 11, title: 'SCREAM', description: 'Comedy Description 1', posterUrl: require('@/assets/Horror1.webp') },
-          { id: 12, title: 'HELLRAISER', description: 'Comedy Description 2', posterUrl: require('@/assets/Horror2.webp') },
-          { id: 13, title: 'THE EXORCIST', description: 'Comedy Description 3', posterUrl: require('@/assets/Horror3.webp') },
-          { id: 14, title: 'TEXAS CHAINSAW', description: 'Comedy Description 3', posterUrl: require('@/assets/Horror4.webp') },
-          { id: 15, title: 'A NIGHTMARE ON ELM STREET', description: 'Comedy Description 3', posterUrl: require('@/assets/Horror5.webp') }
+          { id: 23, title: 'SCREAM', description: 'Comedy Description 1', posterUrl: require('@/assets/Horror1.webp') },
+          { id: 24, title: 'HELLRAISER', description: 'Comedy Description 2', posterUrl: require('@/assets/Horror2.webp') },
+          { id: 25, title: 'THE EXORCIST', description: 'Comedy Description 3', posterUrl: require('@/assets/Horror3.webp') },
+          { id: 26, title: 'TEXAS CHAINSAW', description: 'Comedy Description 3', posterUrl: require('@/assets/Horror4.webp') },
+          { id: 27, title: 'A NIGHTMARE ON ELM STREET', description: 'Comedy Description 3', posterUrl: require('@/assets/Horror5.webp') },
         ],
         Romance: [
-          { id: 16, title: 'The NOTEBOOK', description: 'Comedy Description 1', posterUrl: require('@/assets/Romance1.jpg') },
-          { id: 17, title: 'Dirty Dancing', description: 'Comedy Description 2', posterUrl: require('@/assets/Romance2.webp') },
-          { id: 18, title: 'Terrry Maguire', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance3.webp') },
-          { id: 19, title: 'When Harry Met Sally...', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance4.webp') },
-          { id: 20, title: 'TITANIC', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance5.jpg') }
+          { id: 28, title: 'The NOTEBOOK', description: 'Comedy Description 1', posterUrl: require('@/assets/Romance1.jpg') },
+          { id: 29, title: 'Dirty Dancing', description: 'Comedy Description 2', posterUrl: require('@/assets/Romance2.webp') },
+          { id: 30, title: 'Jerrry Maguire', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance3.webp') },
+          { id: 31, title: 'When Harry Met Sally...', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance4.webp') },
+          { id: 32, title: 'TITANIC', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance5.jpg') },
         ]
       };
     },
