@@ -84,35 +84,41 @@
         selectedTab: 'Suggested',
         categories: ['Suggested', 'Action', 'Horror', 'Romance'],
         Suggested: [
-          { id: 1, title: 'Movie 1', description: 'Description 1', posterUrl: require('@/assets/Suggested1.webp') },
-          { id: 2, title: 'Movie 2', description: 'Description 2', posterUrl: require('@/assets/Suggested2.jpg') },
-          { id: 3, title: 'Movie 3', description: 'Description 3', posterUrl: require('@/assets/Suggested3.jpg') },
-          { id: 4, title: 'Movie 4', description: 'Description 4', posterUrl: require('@/assets/Suggested4.jpg') },
-          { id: 5, title: 'Movie 5', description: 'Description 5', posterUrl: require('@/assets/Suggested5.jpg') },
-          { id: 6, title: 'Movie 6', description: 'Money Heist', posterUrl: require('@/assets/Suggested6.jpg') }
+          { id: 1, title: 'GoodFellas', description: 'Goodfellas (1990)', posterUrl: require('@/assets/Suggested1.webp') },
+          { id: 2, title: 'AFTER' , description: 'Description 2', posterUrl: require('@/assets/Suggested2.jpg') },
+          { id: 3, title: 'INVASION', description: 'Description 3', posterUrl: require('@/assets/Suggested3.jpg') },
+          { id: 4, title: 'ARCHER', description: "Surviver it's a hard game.", posterUrl: require('@/assets/Suggested4.jpg') },
+          { id: 5, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },
+          { id: 21, title: 'MONEY HEIST', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested6.jpg') },
+          { id: 5, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },
+          { id: 5, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },
+          { id: 5, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },
+          { id: 5, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },
+          { id: 5, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },
+          { id: 5, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },
         ],
         
-        // Action: [
-        //   { id: 6, title: 'Action Movie 1', description: 'Action Description 1', posterUrl: require('@/assets/Action1.webp') },
-        //   { id: 7, title: 'Action Movie 2', description: 'Action Description 2', posterUrl: require('@/assets/Action2.webp') },
-        //   { id: 8, title: 'Action Movie 3', description: 'Action Description 3', posterUrl: require('@/assets/Action3.webp') },
-        //   { id: 9, title: 'Action Movie 3', description: 'Action Description 3', posterUrl: require('@/assets/Action4.webp') },
-        //   { id: 10, title: 'Action Movie 3', description: 'Action Description 3', posterUrl: require('@/assets/Action5.webp') }
-        // ],
-        // Horror: [
-        //   { id: 11, title: 'Comedy Movie 1', description: 'Comedy Description 1', posterUrl: require('@/assets/Horror1.webp') },
-        //   { id: 12, title: 'Comedy Movie 2', description: 'Comedy Description 2', posterUrl: require('@/assets/Horror2.webp') },
-        //   { id: 13, title: 'Comedy Movie 3', description: 'Comedy Description 3', posterUrl: require('@/assets/Horror3.webp') },
-        //   { id: 14, title: 'Comedy Movie 3', description: 'Comedy Description 3', posterUrl: require('@/assets/Horror4.webp') },
-        //   { id: 15, title: 'Comedy Movie 3', description: 'Comedy Description 3', posterUrl: require('@/assets/Horror5.webp') },
-        // ],
-        // Romance: [
-        //   { id: 16, title: 'Comedy Movie 1', description: 'Comedy Description 1', posterUrl: require('@/assets/Romance1.jpg') },
-        //   { id: 17, title: 'Comedy Movie 2', description: 'Comedy Description 2', posterUrl: require('@/assets/Romance2.webp') },
-        //   { id: 18, title: 'Comedy Movie 3', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance3.webp') },
-        //   { id: 19, title: 'Comedy Movie 3', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance4.webp') },
-        //   { id: 20, title: 'Comedy Movie 3', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance5.jpg') }
-        // ]
+        Action: [
+          { id: 6, title: 'Matrix ', description: 'Action Description 1', posterUrl: require('@/assets/Action1.webp') },
+          { id: 7, title: 'SKYFALL', description: 'Action Description 2', posterUrl: require('@/assets/Action2.webp') },
+          { id: 8, title: 'DUNKIRK', description: 'Action Description 3', posterUrl: require('@/assets/Action3.webp') },
+          { id: 9, title: 'PULP FICTION', description: 'Action Description 3', posterUrl: require('@/assets/Action4.webp') },
+          { id: 10, title: 'VENOM', description: 'Action Description 3', posterUrl: require('@/assets/A1.jpg') }
+        ],
+        Horror: [
+          { id: 11, title: 'SCREAM', description: 'Comedy Description 1', posterUrl: require('@/assets/Horror1.webp') },
+          { id: 12, title: 'HELLRAISER', description: 'Comedy Description 2', posterUrl: require('@/assets/Horror2.webp') },
+          { id: 13, title: 'THE EXORCIST', description: 'Comedy Description 3', posterUrl: require('@/assets/Horror3.webp') },
+          { id: 14, title: 'TEXAS CHAINSAW', description: 'Comedy Description 3', posterUrl: require('@/assets/Horror4.webp') },
+          { id: 15, title: 'A NIGHTMARE ON ELM STREET', description: 'Comedy Description 3', posterUrl: require('@/assets/Horror5.webp') }
+        ],
+        Romance: [
+          { id: 16, title: 'The NOTEBOOK', description: 'Comedy Description 1', posterUrl: require('@/assets/Romance1.jpg') },
+          { id: 17, title: 'Dirty Dancing', description: 'Comedy Description 2', posterUrl: require('@/assets/Romance2.webp') },
+          { id: 18, title: 'Terrry Maguire', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance3.webp') },
+          { id: 19, title: 'When Harry Met Sally...', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance4.webp') },
+          { id: 20, title: 'TITANIC', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance5.jpg') }
+        ]
       };
     },
         mounted() {
