@@ -104,12 +104,22 @@
           { id: 22, title: 'DEADPOOL', description: 'DRAMA, 2019', posterUrl: require('@/assets/dp.jpg') },
           { id: 23, title: 'MOANA2', description: 'DRAMA, 2019', posterUrl: require('@/assets/moana.jpg') },
           { id: 24, title: 'MEGAN', description: 'DRAMA, 2019', posterUrl: require('@/assets/megan.jpg') },
-          { id: 25, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },
-          { id: 26, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },
-          { id: 27, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },
+          { id: 25, title: 'STAR WARS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Star wars.jpg') },
+          { id: 26, title: 'SPIDERMAN', description: 'DRAMA, 2019', posterUrl: require('@/assets/Spider-man.jpg') },
+          { id: 27, title: 'Stranger Things', description: 'DRAMA, 2019', posterUrl: require('@/assets/Stranger Things.jpg') },
+          { id: 28, title: 'TOPGUN', description: 'DRAMA, 2019', posterUrl: require('@/assets/TopGun.jpg') },
+          { id: 29, title: 'Stranger Things', description: 'DRAMA, 2019', posterUrl: require('@/assets/Stranger Things.jpg') },
+          { id: 30, title: 'Stranger Things', description: 'DRAMA, 2019', posterUrl: require('@/assets/Stranger Things.jpg') },
+          { id: 31, title: 'Stranger Things', description: 'DRAMA, 2019', posterUrl: require('@/assets/Stranger Things.jpg') },
+
         ],
         
         Action: [
+          { id: 6, title: 'Matrix ', description: 'Action Description 1', posterUrl: require('@/assets/Action1.webp') },
+          { id: 7, title: 'SKYFALL', description: 'Action Description 2', posterUrl: require('@/assets/Action2.webp') },
+          { id: 8, title: 'DUNKIRK', description: 'Action Description 3', posterUrl: require('@/assets/Action3.webp') },
+          { id: 9, title: 'PULP FICTION', description: 'Action Description 3', posterUrl: require('@/assets/Action4.webp') },
+          { id: 10, title: 'VENOM', description: 'Action Description 3', posterUrl: require('@/assets/A1.jpg') },
           { id: 6, title: 'Matrix ', description: 'Action Description 1', posterUrl: require('@/assets/Action1.webp') },
           { id: 7, title: 'SKYFALL', description: 'Action Description 2', posterUrl: require('@/assets/Action2.webp') },
           { id: 8, title: 'DUNKIRK', description: 'Action Description 3', posterUrl: require('@/assets/Action3.webp') },
@@ -121,21 +131,36 @@
           { id: 12, title: 'HELLRAISER', description: 'Comedy Description 2', posterUrl: require('@/assets/Horror2.webp') },
           { id: 13, title: 'THE EXORCIST', description: 'Comedy Description 3', posterUrl: require('@/assets/Horror3.webp') },
           { id: 14, title: 'TEXAS CHAINSAW', description: 'Comedy Description 3', posterUrl: require('@/assets/Horror4.webp') },
-          { id: 15, title: 'A NIGHTMARE ON ELM STREET', description: 'Comedy Description 3', posterUrl: require('@/assets/Horror5.webp') }
+          { id: 15, title: 'A NIGHTMARE ON ELM STREET', description: 'Comedy Description 3', posterUrl: require('@/assets/Horror5.webp') },
+          { id: 105, title: 'Annabell ', description: 'Action Description 1', posterUrl: require('@/assets/anna.jpg') },
+          { id: 104, title: 'SKYFALL', description: 'Action Description 2', posterUrl: require('@/assets/Action2.webp') },
+          { id: 103, title: 'DUNKIRK', description: 'Action Description 3', posterUrl: require('@/assets/Action3.webp') },
+          { id: 102, title: 'PULP FICTION', description: 'Action Description 3', posterUrl: require('@/assets/Action4.webp') },
+          { id: 101, title: 'VENOM', description: 'Action Description 3', posterUrl: require('@/assets/A1.jpg') }
         ],
         Romance: [
           { id: 16, title: 'The NOTEBOOK', description: 'Comedy Description 1', posterUrl: require('@/assets/Romance1.jpg') },
           { id: 17, title: 'Dirty Dancing', description: 'Comedy Description 2', posterUrl: require('@/assets/Romance2.webp') },
           { id: 18, title: 'Terrry Maguire', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance3.webp') },
           { id: 19, title: 'When Harry Met Sally...', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance4.webp') },
-          { id: 20, title: 'TITANIC', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance5.jpg') }
+          { id: 20, title: 'TITANIC', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance5.jpg') },
+          { id: 6, title: 'Matrix ', description: 'Action Description 1', posterUrl: require('@/assets/Action1.webp') },
+          { id: 7, title: 'SKYFALL', description: 'Action Description 2', posterUrl: require('@/assets/Action2.webp') },
+          { id: 8, title: 'DUNKIRK', description: 'Action Description 3', posterUrl: require('@/assets/Action3.webp') },
+          { id: 9, title: 'PULP FICTION', description: 'Action Description 3', posterUrl: require('@/assets/Action4.webp') },
+          { id: 10, title: 'VENOM', description: 'Action Description 3', posterUrl: require('@/assets/A1.jpg') }
         ],
         Animation: [
           { id: 16, title: 'The NOTEBOOK', description: 'Comedy Description 1', posterUrl: require('@/assets/Romance1.jpg') },
           { id: 17, title: 'Dirty Dancing', description: 'Comedy Description 2', posterUrl: require('@/assets/Romance2.webp') },
           { id: 18, title: 'Terrry Maguire', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance3.webp') },
           { id: 19, title: 'When Harry Met Sally...', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance4.webp') },
-          { id: 20, title: 'TITANIC', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance5.jpg') }
+          { id: 20, title: 'TITANIC', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance5.jpg') },
+          { id: 212, title: 'Matrix ', description: 'Action Description 1', posterUrl: require('@/assets/Action1.webp') },
+          { id: 213, title: 'SKYFALL', description: 'Action Description 2', posterUrl: require('@/assets/Action2.webp') },
+          { id: 214, title: 'DUNKIRK', description: 'Action Description 3', posterUrl: require('@/assets/Action3.webp') },
+          { id: 23, title: 'MOANA2', description: 'DRAMA, 2019', posterUrl: require('@/assets/moana.jpg') },
+          { id: 216, title: 'กังฟูแพนด้า', description: 'Action Description 3', posterUrl: require('@/assets/kungfu.jpg') }
         ]
       };
     },

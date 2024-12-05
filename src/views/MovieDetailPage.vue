@@ -5,6 +5,7 @@
       <div class="row movie-background">
         <!-- Video Player Section -->
         <div v-if="movie" class="movie-watch-page col-md-12 video-container">
+          <h1 class="mb-4 mt-5">{{ movie.title }}</h1>
           <video 
             class="video-player" 
             controls 
@@ -13,7 +14,7 @@
             <source :src="movie.videoUrl" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-          <h1>{{ movie.title }}</h1>
+          <h1 class="mb-4 mt-5">{{ movie.title }}</h1>
         </div>
       </div>
     </div>
@@ -42,7 +43,7 @@
     async created() {
     // จำลองการดึงข้อมูลหนัง
     const movies = [
-  { id: 1, title: 'Ve', videoUrl: require('@/assets/venom.mp4'), posterUrl: require('@/assets/A1.jpg') },
+  { id: 10, title: '', videoUrl: require('@/assets/venom2.mp4'), posterUrl: require('@/assets/A1.jpg') },
   { id: 2, title: 'Movie 2', videoUrl: 'https://example.com/video2.mp4', posterUrl: 'https://example.com/poster2.jpg' }
   ];
       this.movie = movies.find(movie => movie.id === parseInt(this.id));
@@ -60,6 +61,9 @@
   /* Custom Styles for Movie Watch Page */
   .movie-watch-page {
     color: #ffffff;
+    background-color: #000;
+    height: 1000px;
+    width: 100%;
   }
   
   .movie-background {
