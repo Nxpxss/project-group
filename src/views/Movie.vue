@@ -133,7 +133,7 @@
           { id: 14, title: 'TEXAS CHAINSAW', description: 'Comedy Description 3', posterUrl: require('@/assets/Horror4.webp') },
           { id: 15, title: 'A NIGHTMARE ON ELM STREET', description: 'Comedy Description 3', posterUrl: require('@/assets/Horror5.webp') },
           { id: 105, title: 'Annabell ', description: 'Action Description 1', posterUrl: require('@/assets/anna.jpg') },
-          { id: 104, title: 'SKYFALL', description: 'Action Description 2', posterUrl: require('@/assets/Action2.webp') },
+          { id: 104, title: 'มัธยมซอมบี้', description: 'Action Description 2', posterUrl: require('@/assets/zobie.jpg') },
           { id: 103, title: 'DUNKIRK', description: 'Action Description 3', posterUrl: require('@/assets/Action3.webp') },
           { id: 102, title: 'PULP FICTION', description: 'Action Description 3', posterUrl: require('@/assets/Action4.webp') },
           { id: 101, title: 'VENOM', description: 'Action Description 3', posterUrl: require('@/assets/A1.jpg') }
