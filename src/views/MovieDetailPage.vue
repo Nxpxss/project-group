@@ -17,14 +17,7 @@
           <!-- Movie Information Overlay -->
           <div class="col-md-15 movie-info">
             <div class="container">
-              <div class="buttons mt-3">
-                <button class="btn btn-primary btn-lg play-button">
-                  <i class="fas fa-play"></i> Play
-                </button>
-                <button class="btn btn-secondary btn-lg more-info-button">
-                  <i class="fas fa-info-circle"></i> More Info
-                </button>
-              </div>
+
             </div>
           </div>
         </div>

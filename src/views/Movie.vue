@@ -59,6 +59,17 @@
   </div>
 </div>
 
+<div v-if="selectedTab === 'Animation'" class="Animation-movies-section">
+  <div class="container mt-4 mb-5">
+    <h1 class="text-white mb-4">Animation</h1>
+    <div class="row">
+      <div class="col-md-3" v-for="movie in Animation" :key="movie.id">
+        <MovieCard :movie="movie" class="movie-card mt-5" />
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
   
@@ -82,17 +93,17 @@
     data() {
       return {
         selectedTab: 'Suggested',
-        categories: ['Suggested', 'Action', 'Horror', 'Romance'],
+        categories: ['Suggested', 'Action', 'Horror', 'Romance','Animation'],
         Suggested: [
           { id: 1, title: 'GoodFellas', description: 'Goodfellas (1990)', posterUrl: require('@/assets/Suggested1.webp') },
           { id: 2, title: 'AFTER' , description: 'Description 2', posterUrl: require('@/assets/Suggested2.jpg') },
           { id: 3, title: 'INVASION', description: 'Description 3', posterUrl: require('@/assets/Suggested3.jpg') },
           { id: 4, title: 'ARCHER', description: "Surviver it's a hard game.", posterUrl: require('@/assets/Suggested4.jpg') },
           { id: 5, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },
-          { id: 21, title: 'MONEY HEIST', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested6.jpg') },
-          { id: 22, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },
-          { id: 23, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },
-          { id: 24, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },
+          { id: 21, title: 'MONEY HEIST', description: 'DRAMA, 2019', posterUrl: require('@/assets/mn1.jpg') },
+          { id: 22, title: 'DEADPOOL', description: 'DRAMA, 2019', posterUrl: require('@/assets/dp.jpg') },
+          { id: 23, title: 'MOANA2', description: 'DRAMA, 2019', posterUrl: require('@/assets/moana.jpg') },
+          { id: 24, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/megan.jpg') },
           { id: 25, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },
           { id: 26, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },
           { id: 27, title: 'BROKEN MIRRORS', description: 'DRAMA, 2019', posterUrl: require('@/assets/Suggested5.jpg') },
@@ -113,6 +124,13 @@
           { id: 15, title: 'A NIGHTMARE ON ELM STREET', description: 'Comedy Description 3', posterUrl: require('@/assets/Horror5.webp') }
         ],
         Romance: [
+          { id: 16, title: 'The NOTEBOOK', description: 'Comedy Description 1', posterUrl: require('@/assets/Romance1.jpg') },
+          { id: 17, title: 'Dirty Dancing', description: 'Comedy Description 2', posterUrl: require('@/assets/Romance2.webp') },
+          { id: 18, title: 'Terrry Maguire', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance3.webp') },
+          { id: 19, title: 'When Harry Met Sally...', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance4.webp') },
+          { id: 20, title: 'TITANIC', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance5.jpg') }
+        ],
+        Animation: [
           { id: 16, title: 'The NOTEBOOK', description: 'Comedy Description 1', posterUrl: require('@/assets/Romance1.jpg') },
           { id: 17, title: 'Dirty Dancing', description: 'Comedy Description 2', posterUrl: require('@/assets/Romance2.webp') },
           { id: 18, title: 'Terrry Maguire', description: 'Comedy Description 3', posterUrl: require('@/assets/Romance3.webp') },
