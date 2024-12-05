@@ -130,7 +130,7 @@
           { id: 7, title: 'SKYFALL', description: 'Action Description 2', posterUrl: require('@/assets/Action2.webp') },
           { id: 8, title: 'DUNKIRK', description: 'Action Description 3', posterUrl: require('@/assets/Action3.webp') },
           { id: 9, title: 'PULP FICTION', description: 'Action Description 3', posterUrl: require('@/assets/Action4.webp') },
-          { id: 10, title: 'Action Movie 3', description: 'Action Description 3', posterUrl: require('@/assets/Action4.webp') }
+          { id: 10, title: 'Action Movie 3', description: 'Action Description 3', posterUrl: require('@/assets/Action/A1.jpg') }
         ],
         Horror: [
           { id: 11, title: 'Comedy Movie 1', description: 'Comedy Description 1', posterUrl: require('@/assets/Horror1.webp') },
