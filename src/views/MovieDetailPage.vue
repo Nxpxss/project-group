@@ -10,11 +10,9 @@
               controls 
               autoplay 
               :poster="movie.posterUrl">
-              <!-- ตัวอย่าง Video ที่ฝังในเครื่อง -->
-              <source src="https://www.example.com/your-movie.mp4" type="video/mp4">
-              <!-- ข้อความแสดงเมื่อวิดีโอเล่นไม่ได้ -->
-              Your browser does not support the video tag.
-            </video>
+              <source :src="movie.videoUrl" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
           </div>
           <!-- Movie Information Overlay -->
           <div class="col-md-15 movie-info">
@@ -33,9 +31,9 @@
       </div>
       <Footer />
     </div>
-  </template>
+</template>
   
-  <script>
+<script>
   import Navbar from '@/components/Navbar.vue';
   import Footer from '@/components/Footer.vue';
   
@@ -48,10 +46,10 @@
     data() {
       return {
         movie: {
-          title: 'Movie Title',
+          title: 'VENOM',
           description: 'This is a detailed description of the movie.',
           posterUrl: 'https://via.placeholder.com/1200x600', // URL ของภาพพื้นหลังหรือโปสเตอร์
-          videoUrl: 'https://www.example.com/your-movie.mp4' // URL ของวิดีโอที่จะเล่น
+          videoUrl: 'https://youtu.be/Do54f1Dp0h4?si=H3t9f7aVAxGuNoes' // URL ของวิดีโอที่จะเล่น
         }
       };
     }

@@ -31,7 +31,7 @@
     <h1 class="text-white mb-4">Action</h1>
     <div class="row">
       <div class="col-md-3" v-for="movie in Action" :key="movie.id">
-        <MovieCard :movie="movie" class="movie-card" />
+        <MovieCard :movie="movie" class="movie-card mt-5" />
       </div>
     </div>
   </div>
@@ -42,7 +42,7 @@
     <h1 class="text-white mb-4">Horror</h1>
     <div class="row">
       <div class="col-md-3" v-for="movie in Horror" :key="movie.id">
-        <MovieCard :movie="movie" class="movie-card" />
+        <MovieCard :movie="movie" class="movie-card mt-5" />
       </div>
     </div>
   </div>
@@ -53,7 +53,7 @@
     <h1 class="text-white mb-4">Romance</h1>
     <div class="row">
       <div class="col-md-3" v-for="movie in Romance" :key="movie.id">
-        <MovieCard :movie="movie" class="movie-card" />
+        <MovieCard :movie="movie" class="movie-card mt-5" />
       </div>
     </div>
   </div>
@@ -173,6 +173,12 @@
   font-weight: 400;
   font-style: normal;
 }
+.movie-card {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px; /* เพิ่ม margin-right */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 .tab-button {
     background-color: transparent;
     color: rgb(0, 0, 0);
