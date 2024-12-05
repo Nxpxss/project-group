@@ -20,7 +20,7 @@
     <h1 class="text-white mb-4">Suggested</h1>
     <div class="row">
       <div class="col-md-3" v-for="movie in Suggested" :key="movie.id">
-        <MovieCard :movie="movie" class="movie-card" />
+        <MovieCard :movie="movie" class="movie-card mt-5" />
       </div>
     </div>
   </div>
